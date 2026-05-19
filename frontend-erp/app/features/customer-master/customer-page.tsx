@@ -57,6 +57,15 @@ export function CustomerPage({ data }: Props) {
     },
   ];
 
+  function handleUpdate(data: any) {
+    if (!selectedCustomer?.customerId) {
+      alert("No customer selected for editing.");
+      return;
+    }
+
+    return updateCustomer(selectedCustomer.customerId, data);
+  }
+
   return (
     <div className="p-4 space-y-4">
       <div className="flex items-center justify-between">
@@ -75,22 +84,16 @@ export function CustomerPage({ data }: Props) {
           onSubmit={createCustomer}
         />
       </div>
-      <MasterFormDialog
-        open={open}
-        setOpen={setOpen}
-        title="Edit Customer"
-        fields={customerFields}
-        initialValues={
-          selectedCustomer || {
-            customerId: "",
-            customerName: "",
-            email: "",
-            contact: "",
-            address: "",
-          }
-        }
-        onSubmit={(data) => updateCustomer(selectedCustomer.customerId, data)}
-      />
+      {selectedCustomer && (
+        <MasterFormDialog
+          open={open}
+          setOpen={setOpen}
+          title="Edit Customer"
+          fields={customerFields}
+          initialValues={selectedCustomer}
+          onSubmit={(data) => updateCustomer(selectedCustomer.customerId, data)}
+        />
+      )}
       <DataTable
         columns={columns}
         data={data}
