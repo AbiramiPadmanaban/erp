@@ -23,7 +23,7 @@ export function CustomerPage({ data }: Props) {
   const [open, setOpen] = useState(false);
   const [selectedCustomer, setSelectedCustomer] = useState<any>(null);
   const columns: ColumnDef<Customer>[] = [
-    ...customerColumns,
+    ...customerColumns, // spread operator to include all columns from customerColumns
     {
       id: "actions",
       header: "Actions",
@@ -48,6 +48,7 @@ export function CustomerPage({ data }: Props) {
           console.log("EDIT CLICKED");
           setSelectedCustomer(customer);
           setOpen(true);
+          
           // edit in another page - not in the same page
           // router.push(`/customer-master/edit/${customer.customerId}`);
         }
@@ -57,14 +58,7 @@ export function CustomerPage({ data }: Props) {
     },
   ];
 
-  function handleUpdate(data: any) {
-    if (!selectedCustomer?.customerId) {
-      alert("No customer selected for editing.");
-      return;
-    }
 
-    return updateCustomer(selectedCustomer.customerId, data);
-  }
 
   return (
     <div className="p-4 space-y-4">
