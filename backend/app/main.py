@@ -52,3 +52,42 @@ def create_item(item: ItemCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(db_item)
     return db_item
+
+@app.put("/customers/{customer_id}")
+def update_customer(customer_id: int, customer: CustomerCreate, db: Session = Depends(get_db)):
+    db_customer = db.query(Customer).filter(Customer.customerId == customer_id).first()
+    if not db_customer:
+        raise HTTPException(status_code=404, detail="Customer not found")
+    for key, value in customer.dict().items():
+        setattr(db_customer, key, value)
+    db.commit()
+    db.refresh(db_customer)
+    return db_customer
+
+@app.put("/items/{item_id}")
+def update_item(item_id: int, item: ItemCreate, db: Session = Depends(get_db)):
+    db_item = db.query(Item).filter(Item.itemId == item_id).first()
+    if not db_item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    for key, value in item.dict().items():
+        setattr(db_item, key, value)
+    db.commit()
+    db.refresh(db_item)
+    return db_item
+
+@app.delete("/customers/{customer_id}")
+def delete_customer(customer_id: int, db: Session = Depends(get_db)):    
+    db_customer = db.query(Customer).filter(Customer.customerId == customer_id).first()
+    if not db_customer:
+        raise HTTPException(status_code=404, detail="Customer not found")
+    db.delete(db_customer)
+    db.commit()
+    return {"detail": "Customer deleted"}
+@app.delete("/items/{item_id}")
+def delete_item(item_id: int, db: Session = Depends(get_db)):       
+    db_item = db.query(Item).filter(Item.itemId == item_id).first()
+    if not db_item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    db.delete(db_item)
+    db.commit()
+    return {"detail": "Item deleted"}

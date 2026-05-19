@@ -89,14 +89,7 @@ export function CustomerPage({ data }: Props) {
             address: "",
           }
         }
-        onSubmit={(data) => {
-          if (!selectedCustomer?.customerId) {
-            alert("No customer selected for editing.");
-            return;
-          }
-
-          return updateCustomer(selectedCustomer.customerId, data);
-        }}
+        onSubmit={(data) => updateCustomer(selectedCustomer.customerId, data)}
       />
       <DataTable
         columns={columns}
