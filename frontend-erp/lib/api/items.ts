@@ -23,3 +23,28 @@ export async function createItem(data: any) {
 
   return res.json();
 }
+
+// PUT method to update an existing item in the backend API
+export async function updateItem(id: string, data: any) {
+  const res = await fetch(`${API_URL}/items/${id}`, { // Sending the item ID in the URL to specify which item to update
+    method: "PUT",
+    headers: {    
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data), // Converting the Frontend object data to JSON string before sending
+  });
+  if(!res.ok){
+    throw new Error("Failed to update item");
+  }
+  return res.json();
+}
+
+export async function deleteItem(id: string) {
+  const res = await fetch(`${API_URL}/items/${id}`, { // Sending the item ID in the URL to specify which item to delete
+    method: "DELETE",
+  });
+if (!res.ok) {
+  throw new Error("Failed to delete customer");
+}
+  return res.json();
+}
