@@ -58,19 +58,12 @@ export function DataTable<TData>({
       globalFilter,
       columnFilters,
     },
-
     onSortingChange: setSorting,
-
     onGlobalFilterChange: setGlobalFilter,
-
     onColumnFiltersChange: setColumnFilters,
-
     getCoreRowModel: getCoreRowModel(),
-
     getPaginationRowModel: getPaginationRowModel(),
-
     getSortedRowModel: getSortedRowModel(),
-
     getFilteredRowModel: getFilteredRowModel(),
   });
 
