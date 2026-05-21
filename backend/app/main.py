@@ -11,7 +11,7 @@ import os
 
 
 app = FastAPI()
-# Base.metadata.create_all(bind=engine) # Create the database tables automatically based on the models defined in app/models.py. This line is typically used during development to quickly set up the database schema. However, in production environments, it's recommended to use Alembic for managing database migrations instead of relying on automatic table creation.
+Base.metadata.create_all(bind=engine) # Create the database tables automatically based on the models defined in app/models.py. This line is typically used during development to quickly set up the database schema. However, in production environments, it's recommended to use Alembic for managing database migrations instead of relying on automatic table creation.
 load_dotenv()
 
 FRONTEND_URL = os.getenv("FRONTEND_URL")
