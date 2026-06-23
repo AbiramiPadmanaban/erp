@@ -90,52 +90,52 @@ const data = {
         },
       ],
     },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: <BookOpenIcon />,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
     // {
-    //   title: "Settings",
+    //   title: "Documentation",
     //   url: "#",
-    //   icon: <Settings2Icon />,
+    //   icon: <BookOpenIcon />,
     //   items: [
     //     {
-    //       title: "General",
+    //       title: "Introduction",
     //       url: "#",
     //     },
     //     {
-    //       title: "Team",
+    //       title: "Get Started",
     //       url: "#",
     //     },
     //     {
-    //       title: "Billing",
+    //       title: "Tutorials",
     //       url: "#",
     //     },
     //     {
-    //       title: "Limits",
+    //       title: "Changelog",
     //       url: "#",
     //     },
     //   ],
     // },
+    {
+      title: "Settings",
+      url: "#",
+      icon: <Settings2Icon />,
+      items: [
+        {
+          title: "General",
+          url: "#",
+        },
+        {
+          title: "Team",
+          url: "#",
+        },
+        {
+          title: "Billing",
+          url: "#",
+        },
+        {
+          title: "Limits",
+          url: "#",
+        },
+      ],
+    },
   ],
   projects: [
     {
