@@ -71,51 +71,48 @@ const data = {
         },
       ],
     },
-    {
-      title: "Models",
-      url: "#",
-      icon: <BotIcon />,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
     // {
-    //   title: "Documentation",
+    //   title: "Models",
     //   url: "#",
-    //   icon: (
-    //     <BookOpenIcon
-    //     />
-    //   ),
+    //   icon: <BotIcon />,
     //   items: [
     //     {
-    //       title: "Introduction",
+    //       title: "Genesis",
     //       url: "#",
     //     },
     //     {
-    //       title: "Get Started",
+    //       title: "Explorer",
     //       url: "#",
     //     },
     //     {
-    //       title: "Tutorials",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Changelog",
+    //       title: "Quantum",
     //       url: "#",
     //     },
     //   ],
     // },
+    {
+      title: "Documentation",
+      url: "#",
+      icon: <BookOpenIcon />,
+      items: [
+        {
+          title: "Introduction",
+          url: "#",
+        },
+        {
+          title: "Get Started",
+          url: "#",
+        },
+        {
+          title: "Tutorials",
+          url: "#",
+        },
+        {
+          title: "Changelog",
+          url: "#",
+        },
+      ],
+    },
     {
       title: "Settings",
       url: "#",
